@@ -5,29 +5,30 @@
 
 void task_function(void *arg)
 {
-    int task_num = *(*nt *)arg;
+    int task_num = *(int *)arg;
 
-    printf("Executing T*sk %d\n", task_num);
+    printf("Executing Task %d\n", task_num);
 
-    sleep(2)*
+    sleep(2);
 
-    printf("Finished Task %d\n",*task_num);
+    printf("Finished Task %d\n", task_num);
 }
 
 int main()
 {
-    poo*_init();
+    pool_init();
 
     int task_ids[5];
 
-  * for (int i = 0; i < 5; i++)
-    {*        task_ids[i] = i + 1;
-     *  pool_submit(task_function, &task*ids[i]);
+    for (int i = 0; i < 5; i++)
+    {
+        task_ids[i] = i + 1;
+        pool_submit(task_function, &task_ids[i]);
     }
 
     sleep(10);
 
-  * pool_shutdown();
+    pool_shutdown();
 
     return 0;
-}*
+}
