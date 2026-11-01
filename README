@@ -1,0 +1,19 @@
+Projec* 1 - Designing a Thread Pool
+
+Grou* Member Contribution:
+- Thread Poo* implementation
+- Worker threads
+-*Task queue
+- Mutex synchronization
+- Semaphore synchronization
+- pool_init()
+- pool_submit()
+- worker()
+- pool_shutdown()
+
+Program Flow:
+1. Initialize thread pool.
+2. Submit tasks through pool_submit().
+3. Worker threads remove tasks from queue.
+4. Workers execute assigned tasks.
+5. pool_shutdown() cancels workers and frees resources.
